@@ -33,3 +33,9 @@ kubectl rollout status deployment/django-k8s-web-deployment
 export SINGLE_POD_NAME=$(kubectl get pod -l app=django-k8s-web-deployment -o jsonpath="{.items[0].metadata.name}")
 
 kubectl exec -it $SINGLE_POD_NAME -- bash /app/migrate.sh
+
+      # POSTGRES_DB=${{ secrets.POSTGRES_DB }}
+          # POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
+          # POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+          # POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}
+          # POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}
