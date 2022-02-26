@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test_django_job]
     env:
-      CLUSTER_NAME: django-k8s
+      CLUSTER_NAME: djk8s
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Insall doctl
+      - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DO_API_TOKEN_KEY }}
